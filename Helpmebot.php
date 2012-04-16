@@ -65,3 +65,11 @@ $wgSpecialPageGroups['AdminLog'] = "developer";
 $wgExtensionMessagesFiles['Helpmebot'] = $IP . '/extensions/Helpmebot/Helpmebot.i18n.php';
 
 $wgHelpmebotStyleVersion=6;
+
+$wgHooks['GitViewers'][] = "efHelpmebotGitViewers";
+
+function efHelpmebotGitViewers(&$viewers) {
+	$viewers["git@github.com:(.*).git"] = "https://github.com/$1/tree/%H";
+
+	return true;
+}
