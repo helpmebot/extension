@@ -27,6 +27,11 @@ class CommandListPager extends TablePager
 			
 		}
 		
+		if( $name == "description" )
+		{
+			return wfMessage( 'hmb-command-' . $value )->parse();
+		}
+		
 		return $value;
 	}
 
