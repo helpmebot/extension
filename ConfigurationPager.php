@@ -6,14 +6,14 @@ class ConfigurationPager extends TablePager
 	function getQueryInfo()
 	{
 		return array(
-			'tables' => 'hmb_user',
-			'fields' => array('user_id', 'user_nickname','user_username', 'user_hostname', 'user_accesslevel', 'sort')
+			'tables' => 'hmb_globalconfig',
+			'fields' => array('configuration_id', 'configuration_name','configuration_description', 'configuration_value')
 			);
 	}
 
-	function getIndexField(){return "sort";}
+	function getIndexField(){return "configuration_name";}
 
-	function getRowClass($row){return "accesslistentry-" . $row->user_accesslevel; }
+	//function getRowClass($row){return "accesslistentry-" . $row->user_accesslevel; }
 
 	function isFieldSortable( $field )
 	{ return false; }
@@ -31,12 +31,11 @@ class ConfigurationPager extends TablePager
 	function getFieldNames()
 	{
 		return array(
-		'user_id'	=> "Access ID",
-		'user_nickname' => "Nickname",
-		'user_username' => "Username",
-		'user_hostname' => "Hostname",
-		'user_accesslevel' => "Access level"
-		);
+			'configuration_id' => "id", 
+			'configuration_name' => "name",
+			'configuration_description' => "desc", 
+			'configuration_value' => "val"
+			);
 	}
 
 }
