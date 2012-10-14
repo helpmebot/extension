@@ -24,8 +24,9 @@ class SpecialHelpmebotConfiguration extends SpecialPage {
 				$pager = new ConfigurationPager();
 				$wgOut->addHTML( $pager->getNavigationBar() . '<table>' . $pager->getBody() . '</table>' . $pager->getNavigationBar() );
 
+			} else {
+				$wgOut->addWikiMsg('hmb-configuration-channeltext');
 			}
-			$wgOut->addWikiMsg('hmb-configuration-channeltext');
 		}
 	}
 }

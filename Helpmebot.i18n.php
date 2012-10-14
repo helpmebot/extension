@@ -22,6 +22,7 @@ $messages['en'] = array(
 	'hmb-ignorelist-headertext' => 'Access list is shown below. Table is scanned from top to bottom, first matching entry provides the access level.',
 	'right-helpmebot-editmessages' => 'Edit the bot\'s message table',
 	'right-helpmebot-view-ignorelist' => 'View bot\'s entire access list.',
-	'hmb-configuration-headertext' => 'This shows the bot\'s configuration. Please choose a channel:',
+	'hmb-configuration-headertext' => 'This shows the bot\'s configuration. Please choose a channel, or view the [//helpmebot.org.uk/w/index.php?title=Special:HelpmebotConfiguration&ircchannel=-1 global configuration]:',
+	'hmb-configuration-globaltext' => 'This shows the bot\'s current global configuration.',
 	'adminlog' => 'Server Admin Log',
 );

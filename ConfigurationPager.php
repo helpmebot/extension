@@ -7,7 +7,7 @@ class ConfigurationPager extends TablePager
 	{
 		return array(
 			'tables' => 'hmb_globalconfig',
-			'fields' => array('configuration_id', 'configuration_name','configuration_description', 'configuration_value')
+			'fields' => array('configuration_name','configuration_description', 'configuration_value')
 			);
 	}
 
@@ -31,10 +31,9 @@ class ConfigurationPager extends TablePager
 	function getFieldNames()
 	{
 		return array(
-			'configuration_id' => "id", 
-			'configuration_name' => "name",
-			'configuration_description' => "desc", 
-			'configuration_value' => "val"
+			'configuration_name' => "Option Name",
+			'configuration_description' => "Description", 
+			'configuration_value' => "Value"
 			);
 	}
 
