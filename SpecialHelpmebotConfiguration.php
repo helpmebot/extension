@@ -16,7 +16,6 @@ class SpecialHelpmebotConfiguration extends SpecialPage {
 			$wgOut->addWikiMsg('hmb-configuration-headertext');
 					
 			$pager = new ConfigChannelListPager();
-			$wgOut->addHTML( $out );
 			$wgOut->addHTML( '<table>' . $pager->getBody() . '</table>' );
 		}
 		else {
