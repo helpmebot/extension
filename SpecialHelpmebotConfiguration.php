@@ -23,7 +23,6 @@ class SpecialHelpmebotConfiguration extends SpecialPage {
 			if( $channel == 0 ) {
 				$wgOut->addWikiMsg('hmb-configuration-globaltext');
 				$pager = new ConfigurationPager();
-				$wgOut->addHTML( $out );
 				$wgOut->addHTML( $pager->getNavigationBar() . '<table>' . $pager->getBody() . '</table>' . $pager->getNavigationBar() );
 
 			}
