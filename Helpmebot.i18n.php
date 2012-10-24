@@ -10,7 +10,6 @@ $messages['en'] = array(
 	'specialpages-group-helpmebot' => "Helpmebot data",
 	'brain' => "Brain",
 	'commandlist' => 'Command List',
-	'subversionrepositories' => 'Subversion repositories',
 	'hmb-superuser' => 'Superuser',
 	'hmb-developer' => 'Developer',
 	'hmb-advanced' => 'Advanced',
@@ -24,5 +23,4 @@ $messages['en'] = array(
 	'right-helpmebot-view-ignorelist' => 'View bot\'s entire access list.',
 	'hmb-configuration-headertext' => 'This shows the bot\'s configuration. Please choose a channel, or view the [//helpmebot.org.uk/w/index.php?title=Special:HelpmebotConfiguration&ircchannel=-1 global configuration]:',
 	'hmb-configuration-globaltext' => 'This shows the bot\'s current global configuration.',
-	'adminlog' => 'Server Admin Log',
 );
