@@ -32,9 +32,6 @@ $wgNamespaceProtection[NS_MESSAGE]      = array( 'helpmebot-editmessages' );
 $wgAutoloadClasses['SpecialAccessList'] = $IP . '/extensions/Helpmebot/SpecialAccessList.php';
 $wgAutoloadClasses['AccessListPager'] = $IP . '/extensions/Helpmebot/AccessListPager.php';
 
-$wgAutoloadClasses['SpecialAdminLog'] = $IP . '/extensions/Helpmebot/SpecialAdminLog.php';
-$wgAutoloadClasses['AdminLogPager'] = $IP . '/extensions/Helpmebot/AdminLogPager.php';
-
 $wgAutoloadClasses['SpecialBrain'] = $IP.'/extensions/Helpmebot/SpecialBrain.php';
 $wgAutoloadClasses['BrainPager'] = $IP.'/extensions/Helpmebot/BrainPager.php';
 
@@ -45,32 +42,16 @@ $wgAutoloadClasses['SpecialHelpmebotConfiguration'] = $IP . '/extensions/Helpmeb
 $wgAutoloadClasses['ConfigChannelListPager'] = $IP.    '/extensions/Helpmebot/ConfigChannelListPager.php';
 $wgAutoloadClasses['ConfigurationPager'] = $IP.    '/extensions/Helpmebot/ConfigurationPager.php';
 
-
-$wgAutoloadClasses['SpecialSubversionRepositories'] = $IP.'/extensions/Helpmebot/SpecialSubversionRepositories.php';
-
 $wgSpecialPages['AccessList'] = 'SpecialAccessList';
 $wgSpecialPages['Brain'] = 'SpecialBrain';
 $wgSpecialPages['CommandList'] = 'SpecialCommandList';
 $wgSpecialPages['HelpmebotConfiguration'] = 'SpecialHelpmebotConfiguration';
-$wgSpecialPages['SubversionRepositories'] = 'SpecialSubversionRepositories';
-$wgSpecialPages['AdminLog'] = 'SpecialAdminLog';
 
 $wgSpecialPageGroups['AccessList'] = 'helpmebot';
 $wgSpecialPageGroups['Brain']="helpmebot";
 $wgSpecialPageGroups['CommandList']="helpmebot";
 $wgSpecialPageGroups['HelpmebotConfiguration']="helpmebot";
-$wgSpecialPageGroups['SubversionRepositories']="developer";
-$wgSpecialPageGroups['AdminLog'] = "developer";
-
 
 $wgExtensionMessagesFiles['Helpmebot'] = $IP . '/extensions/Helpmebot/Helpmebot.i18n.php';
 
 $wgHelpmebotStyleVersion=6;
-
-$wgHooks['GitViewers'][] = "efHelpmebotGitViewers";
-
-function efHelpmebotGitViewers(&$viewers) {
-	$viewers["git@github.com:(.*).git"] = "https://github.com/$1/tree/%H";
-
-	return true;
-}
