@@ -18,7 +18,20 @@ class BrainPager extends TablePager
 
 	function formatValue( $name, $value )
 	{
-		return $value;
+		switch($name){
+			case "keyword_name":
+			
+				return $value;
+			case "keyword_value":
+				
+				return $value;
+			case "keyword_action":
+				if($value === "0") return $this->msg("hmb-action-no");
+				if($value === "1") return $this->msg("hmb-action-yes");
+				return $value;
+			default:
+				return $value;
+		}
 	}
 
 	function getDefaultSort()

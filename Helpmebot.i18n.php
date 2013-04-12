@@ -25,6 +25,8 @@ $messages['en'] = array(
 	'hmb-ignorelist-headertext' => 'Access list is shown below. Table is scanned from top to bottom, first matching entry provides the access level.',
 	
 	'hmb-brain-headertext' => 'This is a list of all the words I recognise:',
+	'hmb-action-yes' => 'Yes',
+	'hmb-action-no' => 'No',
 	
 	'right-helpmebot-editmessages' => 'Edit the bot\'s message table',
 	'right-helpmebot-view-ignorelist' => 'View bot\'s entire access list.',
