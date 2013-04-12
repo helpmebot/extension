@@ -19,31 +19,31 @@ class BrainPager extends TablePager
 	function formatValue( $name, $value )
 	{
 		$irccolours = array( 
-			"01" => "black",
-			"1" => "black",
-			"02" => "navy",
-			"2" => "navy",
-			"03" => "green",
-			"3" => "green",
-			"04" => "red",
-			"4" => "red",
-			"05" => "maroon",
-			"5" => "maroon",
-			"06" => "purple",
-			"6" => "purple",
-			"07" => "olive",
-			"7" => "olive",
-			"08" => "yellow",
-			"8" => "yellow",
-			"09" => "lime",
-			"9" => "lime",
-			"10" => "teal",
-			"11" => "aqua",
-			"12" => "blue",
-			"13" => "fuchsia",
-			"14" => "gray",
-			"15" => "silver",
-			"16" => "white",
+			"3031" => "black",
+			"31" => "black",
+			"3032" => "navy",
+			"32" => "navy",
+			"3033" => "green",
+			"33" => "green",
+			"3034" => "red",
+			"34" => "red",
+			"3035" => "maroon",
+			"35" => "maroon",
+			"3036" => "purple",
+			"36" => "purple",
+			"3037" => "olive",
+			"37" => "olive",
+			"3038" => "yellow",
+			"38" => "yellow",
+			"3039" => "lime",
+			"39" => "lime",
+			"3130" => "teal",
+			"3131" => "aqua",
+			"3132" => "blue",
+			"3133" => "fuchsia",
+			"3134" => "gray",
+			"3135" => "silver",
+			"3136" => "white",
 		);
 	
 		switch($name){
@@ -55,37 +55,40 @@ class BrainPager extends TablePager
 				$newval = "";
 								
 				$midcolour = false;
+				$backcolour = false;
 				$hadcomma = false;
 				foreach( str_split(bin2hex($value),2) as $c ) {
 									
 					if( $midcolour !== false ) {
-						$num = hex2bin($c);
-						if( $num == "0" ||$num == "1" ||$num == "2" ||$num == "3" ||$num == "4" ||$num == "5" ||$num == "6" ||$num == "7" ||$num == "8" ||$num == "9" )
+						if( $c == "30" ||$c == "31" ||$c == "32" ||$c == "33" ||$c == "34" ||$c == "35" ||$c == "36" ||$c == "37" ||$c == "38" ||$c == "39" )
 						{
-							$midcolour .= $num;
+							if(!$hadcomma)
+								$midcolour .= $c;
+							else
+								$backcolour .= $c;
+							
 							continue;
 						}
-						elseif( $num == "," && ! $hadcomma )
+						elseif( strtolower($c) == "2c" && ! $hadcomma )
 						{
-							$midcolour .= $num;
 							$hadcomma = true;
 							continue;
 						}
 						else {
-							if( strpos( $midcolour, "," ) === false ) {
+							if( ! $hadcomma ) {
 								$newval .= "<span style=\"color:" . $irccolours[ $midcolour ] . ";\">";
 								$openstack[] = "</span>";
 								
 							} else {
 								// background
-								list($fore, $back) = explode(",", $midcolour);
-								$newval .= "<span style=\"color:" . $irccolours[ $fore ] . ";background-color:" . $irccolours[ $back ] . ";\">";
+								$newval .= "<span style=\"color:" . $irccolours[ $midcolour ] . ";background-color:" . $irccolours[ $backcolour ] . ";\">";
 								$openstack[] = "</span>";
 							}
 							
 							// we now want to continue parsing the message.
 							$hadcomma = false;
 							$midcolour = false;
+							$backcolour = false;
 						}
 					}
 				
