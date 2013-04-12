@@ -24,6 +24,8 @@ $messages['en'] = array(
 	'hmb-accesslist-headertext' => 'Access list is shown below. Table is scanned from top to bottom, first matching entry provides the access level. For security reasons, the ignored masks are not shown.',
 	'hmb-ignorelist-headertext' => 'Access list is shown below. Table is scanned from top to bottom, first matching entry provides the access level.',
 	
+	'hmb-commandlist-headertext' => 'Command list is shown below.',
+	
 	'hmb-brain-headertext' => 'This is a list of all the words I recognise:',
 	'hmb-action-yes' => 'Yes',
 	'hmb-action-no' => 'No',

@@ -54,4 +54,11 @@ $wgSpecialPageGroups['HelpmebotConfiguration']="helpmebot";
 
 $wgExtensionMessagesFiles['Helpmebot'] = $IP . '/extensions/Helpmebot/Helpmebot.i18n.php';
 
+$wgResourceModules['ext.Helpmebot'] = array(
+	'styles' => 'modules/hmb.css',
+	'position' => 'top',
+	'localBasePath' => __DIR__,
+	'remoteExtPath' => 'Helpmebot'
+);
+
 $wgHelpmebotStyleVersion=6;

@@ -6,11 +6,10 @@ class SpecialBrain extends SpecialPage {
 	}
  
 	function execute( $par ) {
-		global $wgRequest, $wgOut, $wgScriptPath, $wgHelpmebotStyleVersion;
- 
+		global $wgRequest, $wgOut, $wgScriptPath;
+		$wgOut->addModules( 'ext.Helpmebot' );
 		$this->setHeaders();
-//		$wgOut->addExtensionStyle($wgScriptPath . '/extensions/Helpmebot/hmb.css?' . $wgHelpmebotStyleVersion );
-
+ 
 		$wgOut->addWikiMsg('hmb-brain-headertext');
 
 		$pager = new BrainPager();

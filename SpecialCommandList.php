@@ -6,20 +6,18 @@ class SpecialCommandList extends SpecialPage {
 	}
  
 	function execute( $par ) {
-		global $wgRequest, $wgOut, $wgScriptPath, $wgHelpmebotStyleVersion;
- 
+		global $wgRequest, $wgOut, $wgScriptPath;
+		$wgOut->addModules( 'ext.Helpmebot' );
 		$this->setHeaders();
-		$wgOut->addExtensionStyle($wgScriptPath . '/extensions/Helpmebot/hmb.css?' . $wgHelpmebotStyleVersion );
 		
-		$out = "Command list is shown below.";
-//		$out.= " the access level.";
+		$wgOut->addWikiMsg('hmb-commandlist-headertext');
 		
-		$out.= '<p><span style="color:purple;">Developer</span><br />';
-		$out.= '<span style="color:blue;">Superuser</span><br /> ';
-		$out.= '<span style="color:green;"">Advanced</span><br /> ';
-		$out.= '<span style="color:black;">Normal</span><br /> ';
-		$out.= '<span style="color:orange;">Semi-ignored</span><br /> ';
-		$out.= '<span style="color:red;">Ignored</span></p> ';
+		$out = '<p><span class="accesslistentry-Developer;">Developer</span><br />';
+		$out.= '<span class="accesslistentry-Superuser;">Superuser</span><br /> ';
+		$out.= '<span class="accesslistentry-Advanced;">Advanced</span><br /> ';
+		$out.= '<span class="accesslistentry-Normal;">Normal</span><br /> ';
+		$out.= '<span class="accesslistentry-Semiignored;">Semi-ignored</span><br /> ';
+		$out.= '<span class="accesslistentry-Ignored;">Ignored</span></p> ';
 		
 		$pager = new CommandListPager();
 		$wgOut->addHTML( $out );

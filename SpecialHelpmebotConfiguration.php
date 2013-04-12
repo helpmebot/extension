@@ -6,10 +6,9 @@ class SpecialHelpmebotConfiguration extends SpecialPage {
 	}
  
 	function execute( $par ) {
-		global $wgRequest, $wgOut, $wgScriptPath, $wgHelpmebotStyleVersion;
- 
+		global $wgRequest, $wgOut, $wgScriptPath;
+		$wgOut->addModules( 'ext.Helpmebot' );
 		$this->setHeaders();
-		$wgOut->addExtensionStyle($wgScriptPath . '/extensions/Helpmebot/hmb.css?' . $wgHelpmebotStyleVersion );
 
 		$channel = $wgRequest->getIntOrNull('ircchannel');
 		if($channel == null) {
