@@ -57,9 +57,7 @@ class BrainPager extends TablePager
 				$midcolour = false;
 				$hadcomma = false;
 				foreach( str_split(($value)) as $char ) {
-					$c = bin2hex($char);				
-									
-									
+				
 					if( $midcolour !== false ) {
 						if( $char == "0" ||$char == "1" ||$char == "2" ||$char == "3" ||$char == "4" ||$char == "5" ||$char == "6" ||$char == "7" ||$char == "8" ||$char == "9" )
 						{
@@ -90,19 +88,19 @@ class BrainPager extends TablePager
 						}
 					}
 				
-					switch(strtolower($c)) {
-						case "1f":
+					switch(ord($char)) {
+						case 31:
 							$newval .= "<span style=\"text-decoration:underline;\">";
 							$openstack[] = "</span>";
 							break;
-						case "02":
+						case 2:
 							$newval .= "<span style=\"font-weight:bold;\">";
 							$openstack[] = "</span>";
 							break;
-						case "03":
+						case 3:
 							$midcolour = "";
 							break;
-						case "0f":
+						case 15:
 							foreach( array_reverse($openstack) as $item )
 								$newval .= $item;
 							
