@@ -57,7 +57,9 @@ class BrainPager extends TablePager
 				$midcolour = false;
 				$backcolour = false;
 				$hadcomma = false;
-				foreach( str_split(bin2hex($value),2) as $c ) {
+				foreach( str_split(($value)) as $char ) {
+					$c = bin2hex($char);				
+									
 									
 					if( $midcolour !== false ) {
 						if( $c == "30" ||$c == "31" ||$c == "32" ||$c == "33" ||$c == "34" ||$c == "35" ||$c == "36" ||$c == "37" ||$c == "38" ||$c == "39" )
@@ -111,7 +113,7 @@ class BrainPager extends TablePager
 							$openstack = array();
 							break;
 						default:
-							$newval .= hex2bin($c);
+							$newval .= $char;
 							break;
 					}
 				}
