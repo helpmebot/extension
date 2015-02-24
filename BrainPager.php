@@ -71,7 +71,11 @@ class BrainPager extends TablePager
 							continue;
 						}
 						else {
-							if( strpos( $midcolour, "," ) === false ) {
+							if( $midcolour == "" || $midcolour == ",") {
+								// nope, no colour specified. reset.
+								array_pop($openstack);
+								$newval .= "</span>";
+							} elseif( strpos( $midcolour, "," ) === false ) {
 								$newval .= "<span style=\"color:" . $irccolours[ $midcolour ] . ";\">";
 								$openstack[] = "</span>";
 								
