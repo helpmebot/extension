@@ -21,20 +21,20 @@ class SpecialAccessList extends SpecialPage {
 		
 		$out = "";
 		
-		$out.= '<p><span class="accesslistentry-Developer;">'.wfMsg('hmb-developer').'</span><br />';
-		$out.= '<span class="accesslistentry-Superuser;">'.wfMsg('hmb-superuser').'</span><br /> ';
-		$out.= '<span class="accesslistentry-Advanced;">'.wfMsg('hmb-advanced').'</span><br /> ';
-		$out.= '<span class="accesslistentry-Normal;">'.wfMsg('hmb-normal').'</span><br /> ';
-		$out.= '<span class="accesslistentry-Semiignored;">'.wfMsg('hmb-semi-ignored').'</span><br /> ';
+		$out.= '<p><span class="accesslistentry-Developer;">'.wfMessage('hmb-developer')->text().'</span><br />';
+		$out.= '<span class="accesslistentry-Superuser;">'.wfMessage('hmb-superuser')->text().'</span><br /> ';
+		$out.= '<span class="accesslistentry-Advanced;">'.wfMessage('hmb-advanced')->text().'</span><br /> ';
+		$out.= '<span class="accesslistentry-Normal;">'.wfMessage('hmb-normal')->text().'</span><br /> ';
+		$out.= '<span class="accesslistentry-Semiignored;">'.wfMessage('hmb-semi-ignored')->text().'</span><br /> ';
 		
 		
 		if(! $wgUser->isAllowed('helpmebot-view-ignorelist'))
 		{
-			$out.= '<span class="accesslistentry-Ignored;">'.wfMsg('hmb-ignored-hidden').'</span></p> ';
+			$out.= '<span class="accesslistentry-Ignored;">'.wfMessage('hmb-ignored-hidden')->text().'</span></p> ';
 		}
 		else 
 		{
-			$out.= '<span class="accesslistentry-Ignored;">'.wfMsg('hmb-ignored').'</span></p> ';
+			$out.= '<span class="accesslistentry-Ignored;">'.wfMessage('hmb-ignored')->text().'</span></p> ';
 		}
 		
 		$pager = new AccessListPager();
