@@ -15,4 +15,8 @@ class SpecialBrain extends SpecialPage {
 		$pager = new BrainPager();
 		$wgOut->addHTML( $pager->getNavigationBar() . '<table>' . $pager->getBody() . '</table>' . $pager->getNavigationBar() );
 	}
+
+    function getGroupName() {
+        return 'helpmebot';
+    }
 }

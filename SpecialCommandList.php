@@ -23,4 +23,8 @@ class SpecialCommandList extends SpecialPage {
 		$wgOut->addHTML( $out );
 		$wgOut->addHTML( $pager->getNavigationBar() . '<table>' . $pager->getBody() . '</table>' . $pager->getNavigationBar() );
 	}
+
+    function getGroupName() {
+        return 'helpmebot';
+    }
 }

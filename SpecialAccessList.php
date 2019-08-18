@@ -42,4 +42,8 @@ class SpecialAccessList extends SpecialPage {
 		$wgOut->addHTML( $out );
 		$wgOut->addHTML( '<table>' . $pager->getBody() . '</table>'  );
 	}
+
+    function getGroupName() {
+        return 'helpmebot';
+    }
 }
