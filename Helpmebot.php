@@ -22,7 +22,6 @@ $wgExtensionCredits['specialpage'][] = array(
 );
 
 $wgAvailableRights[] = 'helpmebot-editmessages';
-$wgAvailableRights[] = 'helpmebot-view-ignorelist';
 $wgAvailableRights[] = 'helpmebot-editautogen';
 
 $wgExtraNamespaces[NS_COMMAND] = "Command";
@@ -41,16 +40,8 @@ $wgAutoloadClasses['AccessListPager'] = $IP . '/extensions/Helpmebot/AccessListP
 $wgAutoloadClasses['SpecialBrain'] = $IP.'/extensions/Helpmebot/SpecialBrain.php';
 $wgAutoloadClasses['BrainPager'] = $IP.'/extensions/Helpmebot/BrainPager.php';
 
-$wgAutoloadClasses['CommandListPager'] = $IP.    '/extensions/Helpmebot/CommandListPager.php';
-$wgAutoloadClasses['SpecialCommandList'] = $IP . '/extensions/Helpmebot/SpecialCommandList.php';
-
-$wgAutoloadClasses['SpecialHelpmebotConfiguration'] = $IP . '/extensions/Helpmebot/SpecialHelpmebotConfiguration.php';
-$wgAutoloadClasses['ConfigChannelListPager'] = $IP.    '/extensions/Helpmebot/ConfigChannelListPager.php';
-$wgAutoloadClasses['ConfigurationPager'] = $IP.    '/extensions/Helpmebot/ConfigurationPager.php';
-
 $wgSpecialPages['AccessList'] = 'SpecialAccessList';
 $wgSpecialPages['Brain'] = 'SpecialBrain';
-$wgSpecialPages['CommandList'] = 'SpecialCommandList';
 
 $wgExtensionMessagesFiles['Helpmebot'] = $IP . '/extensions/Helpmebot/Helpmebot.i18n.php';
 
