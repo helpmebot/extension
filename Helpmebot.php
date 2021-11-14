@@ -24,11 +24,6 @@ $wgExtraNamespaces[NS_MESSAGE_TALK] = "Message_talk:";
 
 $wgNamespaceProtection[NS_MESSAGE]      = array( 'helpmebot-editmessages' );
 
-$wgAutoloadClasses['SpecialAccessList'] = $IP . '/extensions/Helpmebot/SpecialAccessList.php';
-$wgAutoloadClasses['AccessListPager'] = $IP . '/extensions/Helpmebot/AccessListPager.php';
-
-$wgSpecialPages['AccessList'] = 'SpecialAccessList';
-
 $wgExtensionMessagesFiles['Helpmebot'] = $IP . '/extensions/Helpmebot/Helpmebot.i18n.php';
 
 $wgResourceModules['ext.Helpmebot'] = array(
