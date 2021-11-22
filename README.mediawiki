@@ -1,15 +1,7 @@
 == Helpmebot extension ==
-This is only useful if you have a mediawiki install alongside helpmebot.
+For modern versions of Helpmebot, this is now unnecessary.
 
-Helpmebot extension is free software: you can redistribute it and/or modify      
-it under the terms of the GNU General Public License as published by   
-the Free Software Foundation, either version 3 of the License, or      
-(at your option) any later version.                                    
-                                                                          
-Helpmebot extension is distributed in the hope that it will be useful,   
-but WITHOUT ANY WARRANTY; without even the implied warranty of         
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the          
-GNU General Public License for more details.                           
-                                                                     
-You should have received a copy of the GNU General Public License 
-along with Helpmebot.  If not, see <http://www.gnu.org/licenses/>.
+Helpmebot has a modern web UI written for .NET 5 which communicates with the bot
+directly.
+
+This extension has been removed the primary version of the bot, and is no longer maintained.
